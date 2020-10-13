@@ -8,6 +8,7 @@ using Microsoft.EntityFrameworkCore;
 using MovieProject.Data;
 using MovieProject.Models;
 
+
 namespace MovieProject.Controllers
 {
     public class MoviesController : Controller
@@ -22,7 +23,7 @@ namespace MovieProject.Controllers
         // GET: Movies
         public async Task<IActionResult> Index()
         {
-            return View(await _context.Movie.ToListAsync());
+            return View("Index2", await _context.Movie.ToListAsync());
         }
 
         // GET: Movies/Details/5
@@ -40,7 +41,7 @@ namespace MovieProject.Controllers
                 return NotFound();
             }
 
-            return View(movie);
+            return View( movie);
         }
 
         // GET: Movies/Create
